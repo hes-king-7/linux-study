@@ -37,6 +37,8 @@ git是一个开源的分布式版本控制系统。
    1. git pull origin 分支名称
 5. 克隆远程仓库代码
    1. git clone 远程仓库地址（内部已实现起别名）
+6. 如何指定本地某条commit记录到远端指定分支
+   1. git push origin(remote name) <commit hash>:origin/master(remote branch name)
 ## git rebase(变基) ：使git记录简洁
 1. git rebase应用的三种情况
 ## git 快速解决冲突
