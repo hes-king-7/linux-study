@@ -20,6 +20,34 @@ Gitlab是一种可以搭建类似于github服务平台的管理工具。更倾�
 
 1. 去往git官网https://git-scm.com/downloads下载git安装包。win下直接点击.exe安装包安装即可。安装过程可自行百度。
 
+2. linux下安装git步骤
+
+   ```css
+   [root@wugenqiang ~]# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel autoconf
+   [root@wugenqiang ~]# yum install gcc-c++ perl-ExtUtils-MakeMaker
+   ### 安装相关依赖包
+   [root@wugenqiang ~]# git --version    ## 查看自带的版本git version 1.8.3.1
+   [root@wugenqiang ~]# yum remove git   ## 移除原来的版本
+   [root@wugenqiang ~]# cd /usr/src
+   [root@wugenqiang src]# wget https://www.kernel.org/pub/software/scm/git/git-2.18.0.tar.gz   ##下载tar包
+   [root@wugenqiang ~]# tar zxf git-2.18.0.tar.gz 				##解压tar包
+   [root@wugenqiang ~]# cd /usr/src
+   [root@wugenqiang src]# ls
+   debug  git-2.18.0  kernels
+   [root@wugenqiang src]# cd git-2.18.0/						##切换目录
+   [root@wugenqiang git-2.18.0]# 
+   [root@wugenqiang git-2.18.0]# make configure				##预编译
+   [root@wugenqiang git-2.18.0]# ./configure --prefix=/usr/git ##配置目录
+   [root@wugenqiang git-2.18.0]# make profix=/usr/git			##编译		
+   [root@wugenqiang git-2.18.0]# make install					##安装
+   [root@wugenqiang ~]# echo "export PATH=$PATH:/usr/git/bin" >> /etc/profile
+   [root@wugenqiang ~]# source /etc/profile				##加入环境变量
+   [root@wugenqiang ~]# git --version						##检查版本信息。
+   git version 2.18.0	
+   ```
+
+   
+
 2. 然后去往github官网https://github.com/进行账号注册。使用邮箱进行账号注册。注册步骤：1.官网首页选择sign up输入对应信息后，点击页面底部create an account创建对应账号。然后进入激活邮箱激活即可。注册成功后返回登录即可。
 
 3. 然后在github上进行操作
